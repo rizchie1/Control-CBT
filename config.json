@@ -11,9 +11,7 @@
     "popup": {
         "enabled": true,
         "title": "PAK RISKI",
-        "message": "Besok Libur ??",
-        "force": true,
-        "id": "1778068209"
+        "message": "Besok Libur ??"
     },
     "force_exit": {
         "enabled": false,
