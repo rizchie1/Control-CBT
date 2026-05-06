@@ -1,8 +1,8 @@
 {
-    "url": "https://yahoo.com",
+    "url": "https://youtube.com",
     "camera": false,
     "remote_button": {
-        "enabled": true,
+        "enabled": false,
         "text": "PENGERJAAN ESSAY",
         "target_url": "https://google.com",
         "show_time": "00:00",
@@ -11,7 +11,9 @@
     "popup": {
         "enabled": true,
         "title": "PAK RISKI",
-        "message": "Besok Libur ??"
+        "message": "aman t",
+        "force": true,
+        "id": "1778068209"
     },
     "force_exit": {
         "enabled": false,
