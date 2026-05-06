@@ -2,7 +2,7 @@
     "url": "https://youtube.com",
     "camera": false,
     "remote_button": {
-        "enabled": true,
+        "enabled": false,
         "text": "PENGERJAAN ESSAY",
         "target_url": "https://google.com",
         "show_time": "00:00",
