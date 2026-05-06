@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Ujian Simulasi UAM</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a, #0ea5e9);
+      color: white;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      width: 90%;
+      max-width: 900px;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 40px;
+    }
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+    }
+    .box {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 24px;
+      padding: 30px 20px;
+    }
+    .number {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: bold;
+    }
+    .label {
+      margin-top: 10px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .footer {
+      margin-top: 35px;
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 25px; }
+      .box { padding: 20px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ujian Simulasi UAM</h1>
+    <div class="subtitle">Senin, 20 April 2026 • Pukul 07.00 WIB</div>
+
+    <div class="countdown">
+      <div class="box">
+        <div class="number" id="days">0</div>
+        <div class="label">Hari</div>
+      </div>
+      <div class="box">
+        <div class="number" id="hours">0</div>
+        <div class="label">Jam</div>
+      </div>
+      <div class="box">
+        <div class="number" id="minutes">0</div>
+        <div class="label">Menit</div>
+      </div>
+      <div class="box">
+        <div class="number" id="seconds">0</div>
+        <div class="label">Detik</div>
+      </div>
+    </div>
+
+    <div class="footer" id="status">Menuju hari pelaksanaan ujian</div>
+  </div>
+
+  <script>
+    const eventDate = new Date('2026-04-20T07:00:00+07:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
+        document.getElementById('status').textContent = 'Ujian Simulasi UAM sedang berlangsung. Semangat!';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

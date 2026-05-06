@@ -1,0 +1,22 @@
+{
+    "url": "https://youtube.com",
+    "camera": false,
+    "remote_button": {
+        "enabled": false,
+        "text": "PENGERJAAN ESSAY",
+        "target_url": "https://google.com",
+        "show_time": "00:00",
+        "confirm_text": "yakin bos"
+    },
+    "popup": {
+        "enabled": true,
+        "title": "PAK RISKI",
+        "message": "aman t",
+        "force": true,
+        "id": "1778068209"
+    },
+    "force_exit": {
+        "enabled": false,
+        "message": "Ujian telah selesai. Aplikasi ditutup oleh admin."
+    }
+}
